@@ -63,6 +63,10 @@ textarea {
 	padding-left: 0.5em;
 }
 
-.submit-message {
-	color: red;
+.submissionSuccess {
+	color: black;
+	background-color: white;
+	padding: 2em;
+	font-weight: 800;
+
 }

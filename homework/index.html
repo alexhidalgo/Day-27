@@ -11,7 +11,7 @@
 
   <body ng-app>
 
-    <form novalidate ng-hide="user.validForm === 1" ng-submit="submit()" ng-controller="SignUpCtrl" name="userForm">
+    <form novalidate ng-hide="submissionSuccess" ng-submit="submit()" ng-controller="SignUpCtrl" name="userForm">
       <h1>Contact Us</h1>
       <div class="input-group" layout="row">
 
@@ -34,7 +34,7 @@
       </div>
       <input class="form-button" type="submit">
     </form>
-    <div ng-hide="submissionSuccess" class="submit-message">
+    <div ng-hide="submissionSuccess" class="submissionSuccess">
       <p>Thanks for contacting us Aaron Larner. We have received your message and will be in touch with you shortly.</p>
     </div>
 
