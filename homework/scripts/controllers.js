@@ -3,9 +3,7 @@ angular.module('app.controllers', [])
 
 	$scope.submit = function() {
 		if($scope.userForm.$valid) {
-			// $window.location = "http://theironyard.com";
-			console.log('form is valid');
+
 		}
-		console.log($scope.userForm);
 	};
 });
