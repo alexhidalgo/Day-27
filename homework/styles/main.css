@@ -62,3 +62,7 @@ textarea {
 	height: 10em;
 	padding-left: 0.5em;
 }
+
+.submit-message {
+	color: red;
+}

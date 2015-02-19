@@ -3,7 +3,8 @@ angular.module('app.controllers', [])
 
 	$scope.submit = function() {
 		if($scope.userForm.$valid) {
-			console.log('valid form');
+			console.log('valid sumbission');
+			$scope.submissionSuccess = true;
 		}
 	};
 });
