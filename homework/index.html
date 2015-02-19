@@ -21,11 +21,11 @@
 
         <label>Email</label>
         <input required placeholder="ssmith@gmail.com" name="email" type="text" ng-model="user.email">
-        <p class="alert" ng-show="user.email.indexOf('@') === -1">Email must contain an '@'</p>
+        <p class="alert" ng-show="user.email.indexOf('@') === -1 && userForm.email.$dirty">Email must contain an '@'</p>
 
         <label>Website</label>
         <input required placeholder="mssmith.net" name="website" type="text" ng-model="user.website">
-        <p class="alert" ng-show="user.website.substring(0, 7) !== 'http://'">Website must start with a http://</p>
+        <p class="alert" ng-show="user.website.substring(0, 7) !== 'http://' && userForm.website.$dirty">Website must start with a http://</p>
 
         <label>Message</label>
         <textarea required placeholder="A friendly message..." name="message" type="text" ng-model="user.message"></textarea>
