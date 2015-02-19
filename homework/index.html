@@ -11,13 +11,13 @@
 
   <body ng-app>
 
-    <form novalidate ng-controller="SignUpCtrl" name="userForm">
+    <form novalidate ng-submit="submit()" ng-controller="SignUpCtrl" name="userForm">
       <h1>Contact Us</h1>
       <div class="input-group" layout="row">
 
         <label>Name</label>
         <input required placeholder="Sally Smith" id="name" type="text" name="name" ng-model="user.name" required>
-        <p class="alert" ng-show="user.name === ''">Name cannot be left empty</p>
+        <p class="alert" ng-show="userForm.name.$invalid && userForm.name.$dirty">Name cannot be left empty</p>
 
         <label>Email</label>
         <input required placeholder="ssmith@gmail.com" name="email" type="text" ng-model="user.email">
@@ -29,7 +29,7 @@
 
         <label>Message</label>
         <textarea required placeholder="A friendly message..." name="message" type="text" ng-model="user.message"></textarea>
-        <p class="alert" ng-show="user.message == null">Message cannot be left empty</p>
+        <p class="alert" ng-show="userForm.message.$invalid && userForm.message.$dirty">Message cannot be left empty</p>
 
       </div>
       <div ng-show="" class="submit-message">

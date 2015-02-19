@@ -3,7 +3,7 @@ angular.module('app.controllers', [])
 
 	$scope.submit = function() {
 		if($scope.userForm.$valid) {
-
+			console.log('valid form');
 		}
 	};
 });

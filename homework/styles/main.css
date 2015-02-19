@@ -43,8 +43,8 @@ form .form-button:hover {
 }
 
 form .ng-invalid {
-		border-left: 4px solid red;
-	}
+/*		border-left: 4px solid red;
+*/	}
 
 .input-group input {
 	width: 100%;
