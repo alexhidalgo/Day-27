@@ -42,9 +42,6 @@ form .form-button:hover {
 	cursor: pointer;
 }
 
-form .ng-invalid {
-/*		border-left: 4px solid red;
-*/	}
 
 .input-group input {
 	width: 100%;
@@ -63,7 +60,7 @@ textarea {
 	padding-left: 0.5em;
 }
 
-.submissionSuccess {
+.submission-success {
 	color: black;
 	background-color: white;
 	padding: 2em;

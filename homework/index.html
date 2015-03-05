@@ -9,32 +9,33 @@
     <link rel="stylesheet" href="styles/main.css">
   </head>
 
-  <body ng-app>
+  <body ng-app ng-controller="SignUpCtrl">
 
-    <form novalidate ng-hide="submissionSuccess" ng-submit="submit()" ng-controller="SignUpCtrl" name="userForm">
+    <form novalidate ng-show="!submissionSuccess" ng-submit="submit(); submitted = true" name="userForm">
       <h1>Contact Us</h1>
       <div class="input-group" layout="row">
 
         <label>Name</label>
         <input required placeholder="Sally Smith" id="name" type="text" name="name" ng-model="user.name" required>
-        <p class="alert" ng-show="userForm.name.$invalid && userForm.name.$dirty">Name cannot be left empty</p>
+        <p class="alert" ng-show="userForm.name.$invalid && userForm.name.$dirty || submitted && userForm.name.$invalid">Name cannot be left empty</p>
 
         <label>Email</label>
         <input required placeholder="ssmith@gmail.com" name="email" type="text" ng-model="user.email">
-        <p class="alert" ng-show="user.email.indexOf('@') === -1 && userForm.email.$dirty">Email must contain an '@'</p>
+        <p class="alert" ng-show="user.email.indexOf('@') === -1 && userForm.email.$dirty || submitted && userForm.email.$invalid">Email must contain an '@'</p>
 
         <label>Website</label>
         <input required placeholder="mssmith.net" name="website" type="text" ng-model="user.website">
-        <p class="alert" ng-show="user.website.substring(0, 7) !== 'http://' && userForm.website.$dirty">Website must start with a http://</p>
+        <p class="alert" ng-show="user.website.substring(0, 7) !== 'http://' && userForm.website.$dirty || submitted && userForm.website.$invalid">Website must start with a http://</p>
 
         <label>Message</label>
         <textarea required placeholder="A friendly message..." name="message" type="text" ng-model="user.message"></textarea>
-        <p class="alert" ng-show="userForm.message.$invalid && userForm.message.$dirty">Message cannot be left empty</p>
+        <p class="alert" ng-show="userForm.message.$invalid && userForm.message.$dirty || submitted &&userForm.message.$invalid">Message cannot be left empty</p>
 
       </div>
       <input class="form-button" type="submit">
     </form>
-    <div ng-hide="submissionMessage" class="submissionSuccess">
+
+    <div ng-show="submissionSuccess" class="submission-success">
       <p>Thanks for contacting us Aaron Larner. We have received your message and will be in touch with you shortly.</p>
     </div>
 
